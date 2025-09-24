@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/skillgrid_logo.png" />
+    <link rel="apple-touch-icon" href="/skillgrid_logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#3b82f6" />
+    <meta name="msapplication-TileColor" content="#3b82f6" />
+    <meta name="msapplication-TileImage" content="/skillgrid_logo.png" />
+    
+    <!-- Primary Meta Tags -->
+    <title>SkillGrid - Professional Services</title>
+    <meta name="title" content="SkillGrid - Professional Services" />
+    <meta name="description" content="SkillGrid offers professional Website Designing, Notes, Translation, Logo Design, and Counselling services. Transform your ideas into reality with our expert team." />
+    <meta name="keywords" content="website design, logo design, translation services, counselling, notes services, professional services, web development, graphic design" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="author" content="SkillGrid Team" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://skillgrid.com/" />
+    <meta property="og:title" content="SkillGrid - Professional Services" />
+    <meta property="og:description" content="SkillGrid offers professional Website Designing, Notes, Translation, Logo Design, and Counselling services. Transform your ideas into reality with our expert team." />
+    <meta property="og:image" content="https://skillgrid.com/skillgrid_logo.png" />
+    <meta property="og:site_name" content="SkillGrid" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://skillgrid.com/" />
+    <meta property="twitter:title" content="SkillGrid - Professional Services" />
+    <meta property="twitter:description" content="SkillGrid offers professional Website Designing, Notes, Translation, Logo Design, and Counselling services. Transform your ideas into reality with our expert team." />
+    <meta property="twitter:image" content="https://skillgrid.com/skillgrid_logo.png" />
+    
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://skillgrid.com/" />
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('SW registered: ', registration);
+            })
+            .catch((registrationError) => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

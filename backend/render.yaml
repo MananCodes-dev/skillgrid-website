@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: skillgrid-backend
+    env: node
+    plan: free
+    region: oregon
+    buildCommand: cd backend && npm install && npm run build
+    startCommand: cd backend && npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: EMAIL_USER
+        value: skillgrit3@gmail.com
+      - key: EMAIL_PASS
+        sync: false
+      - key: JWT_SECRET
+        value: skillgrid-super-secure-jwt-secret-2024-production
+      - key: FRONTEND_URL
+        value: https://skillgrid.vercel.app
