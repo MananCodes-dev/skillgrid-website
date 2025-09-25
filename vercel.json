@@ -1,13 +1,18 @@
 {
   "version": 2,
-  "buildCommand": "cd frontend && npm run build",
-  "outputDirectory": "frontend/dist",
-  "installCommand": "cd frontend && npm install",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "installCommand": "npm install",
   "framework": "vite",
+  "functions": {
+    "frontend/src/**": {
+      "excludeFiles": "**"
+    }
+  },
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "https://skillgrid-backend.onrender.com/api/$1"
+      "destination": "https://skillgrid-website.onrender.com/api/$1"
     }
   ],
   "headers": [
