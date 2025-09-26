@@ -113,6 +113,7 @@ const ContactPage: React.FC = () => {
     setIsSubmitting(true)
 
     try {
+      // Try the API first
       const result = await api.post<{ success: boolean; message: string }>('/api/contact', {
         name: formData.name.trim(),
         email: formData.email.trim(),
@@ -142,13 +143,32 @@ const ContactPage: React.FC = () => {
       }
     } catch (error) {
       console.error('Form submission error:', error)
-      const errorMessage = getErrorMessage(error)
+      
+      // Fallback: Create mailto link as backup
+      const subject = encodeURIComponent(`SkillGrid Inquiry - ${formData.service}`)
+      const body = encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\nService: ${formData.service}\n\nMessage:\n${formData.message}`
+      )
+      const mailtoLink = `mailto:skillgrit3@gmail.com?subject=${subject}&body=${body}`
       
       addToast({
-        type: 'error',
-        title: 'Failed to Send Message',
-        message: errorMessage,
-        duration: 7000
+        type: 'warning',
+        title: 'Server Temporarily Unavailable',
+        message: 'We\'ll open your email client as a backup. Please send the message from there.',
+        duration: 8000
+      })
+      
+      // Open email client after a short delay
+      setTimeout(() => {
+        window.location.href = mailtoLink
+      }, 2000)
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        service: '',
+        message: ''
       })
     } finally {
       setIsSubmitting(false)
