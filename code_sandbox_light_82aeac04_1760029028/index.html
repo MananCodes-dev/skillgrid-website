@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ModernStore - Premium Online Shopping</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-inter bg-gray-50 min-h-screen">
+    <!-- Header Navigation -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-store text-2xl text-indigo-600"></i>
+                    <h1 class="text-xl font-bold text-gray-800">ModernStore</h1>
+                </div>
+                
+                <!-- Navigation Menu -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-indigo-600 font-medium transition-colors">Home</a>
+                    <a href="#products" class="text-gray-700 hover:text-indigo-600 font-medium transition-colors">Products</a>
+                    <a href="#categories" class="text-gray-700 hover:text-indigo-600 font-medium transition-colors">Categories</a>
+                    <a href="#about" class="text-gray-700 hover:text-indigo-600 font-medium transition-colors">About</a>
+                    <a href="#contact" class="text-gray-700 hover:text-indigo-600 font-medium transition-colors">Contact</a>
+                </nav>
+                
+                <!-- User Actions -->
+                <div class="flex items-center space-x-4">
+                    <!-- Search -->
+                    <div class="hidden lg:flex relative">
+                        <input 
+                            type="text" 
+                            placeholder="Search products..." 
+                            class="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                            id="search-input"
+                        >
+                        <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                    </div>
+                    
+                    <!-- User Account -->
+                    <button id="user-menu-btn" class="text-gray-700 hover:text-indigo-600 transition-colors">
+                        <i class="fas fa-user text-lg"></i>
+                    </button>
+                    
+                    <!-- Wishlist -->
+                    <button id="wishlist-btn" class="text-gray-700 hover:text-indigo-600 transition-colors relative">
+                        <i class="fas fa-heart text-lg"></i>
+                        <span id="wishlist-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
+                    </button>
+                    
+                    <!-- Shopping Cart -->
+                    <button id="cart-btn" class="text-gray-700 hover:text-indigo-600 transition-colors relative">
+                        <i class="fas fa-shopping-cart text-lg"></i>
+                        <span id="cart-count" class="absolute -top-2 -right-2 bg-indigo-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                    </button>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" class="md:hidden text-gray-700">
+                        <i class="fas fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-2">
+                    <a href="#home" class="text-gray-700 hover:text-indigo-600 py-2">Home</a>
+                    <a href="#products" class="text-gray-700 hover:text-indigo-600 py-2">Products</a>
+                    <a href="#categories" class="text-gray-700 hover:text-indigo-600 py-2">Categories</a>
+                    <a href="#about" class="text-gray-700 hover:text-indigo-600 py-2">About</a>
+                    <a href="#contact" class="text-gray-700 hover:text-indigo-600 py-2">Contact</a>
+                </div>
+                <!-- Mobile Search -->
+                <div class="mt-4 relative">
+                    <input 
+                        type="text" 
+                        placeholder="Search products..." 
+                        class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                        id="mobile-search-input"
+                    >
+                    <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-4xl md:text-6xl font-bold mb-6">Premium Quality Products</h2>
+                <p class="text-xl mb-8 max-w-2xl mx-auto">Discover amazing products at unbeatable prices. Shop with confidence and enjoy fast, free shipping on orders over $50.</p>
+                <button class="bg-white text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                    Shop Now
+                </button>
+            </div>
+        </section>
+
+        <!-- Product Categories -->
+        <section id="categories" class="py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Shop by Category</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="category-card bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow cursor-pointer" data-category="electronics">
+                        <i class="fas fa-laptop text-4xl text-indigo-600 mb-4"></i>
+                        <h3 class="text-lg font-semibold mb-2">Electronics</h3>
+                        <p class="text-gray-600">Latest gadgets and tech</p>
+                    </div>
+                    <div class="category-card bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow cursor-pointer" data-category="clothing">
+                        <i class="fas fa-tshirt text-4xl text-indigo-600 mb-4"></i>
+                        <h3 class="text-lg font-semibold mb-2">Clothing</h3>
+                        <p class="text-gray-600">Fashion for everyone</p>
+                    </div>
+                    <div class="category-card bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow cursor-pointer" data-category="home">
+                        <i class="fas fa-home text-4xl text-indigo-600 mb-4"></i>
+                        <h3 class="text-lg font-semibold mb-2">Home & Garden</h3>
+                        <p class="text-gray-600">Decor and essentials</p>
+                    </div>
+                    <div class="category-card bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow cursor-pointer" data-category="sports">
+                        <i class="fas fa-football-ball text-4xl text-indigo-600 mb-4"></i>
+                        <h3 class="text-lg font-semibold mb-2">Sports</h3>
+                        <p class="text-gray-600">Fitness and outdoor gear</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section id="products" class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800">Featured Products</h2>
+                    <div class="flex items-center space-x-4">
+                        <!-- Filter Dropdown -->
+                        <select id="sort-select" class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            <option value="featured">Featured</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="name">Name A-Z</option>
+                            <option value="rating">Highest Rated</option>
+                        </select>
+                        
+                        <!-- View Toggle -->
+                        <div class="flex items-center space-x-2">
+                            <button id="grid-view" class="p-2 text-indigo-600 bg-indigo-100 rounded">
+                                <i class="fas fa-th"></i>
+                            </button>
+                            <button id="list-view" class="p-2 text-gray-500 hover:text-indigo-600">
+                                <i class="fas fa-list"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Products Grid -->
+                <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <!-- Products will be loaded here by JavaScript -->
+                </div>
+                
+                <!-- Load More Button -->
+                <div class="text-center mt-12">
+                    <button id="load-more" class="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors">
+                        Load More Products
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Shopping Cart Sidebar -->
+    <div id="cart-sidebar" class="fixed top-0 right-0 h-full w-96 bg-white shadow-2xl transform translate-x-full transition-transform z-50">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-lg font-semibold">Shopping Cart</h3>
+                <button id="close-cart" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            
+            <div id="cart-items" class="space-y-4 mb-6 max-h-96 overflow-y-auto">
+                <!-- Cart items will be loaded here -->
+            </div>
+            
+            <div class="border-t pt-4">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="font-semibold">Total:</span>
+                    <span id="cart-total" class="text-xl font-bold text-indigo-600">$0.00</span>
+                </div>
+                <button id="checkout-btn" class="w-full bg-indigo-600 text-white py-3 rounded-lg hover:bg-indigo-700 transition-colors">
+                    Proceed to Checkout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- User Authentication Modal -->
+    <div id="auth-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-lg p-6 w-full max-w-md">
+            <div class="flex justify-between items-center mb-6">
+                <h3 id="auth-title" class="text-lg font-semibold">Sign In</h3>
+                <button id="close-auth" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <!-- Login Form -->
+            <form id="login-form" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                    <input type="email" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                    <input type="password" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                </div>
+                <button type="submit" class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition-colors">
+                    Sign In
+                </button>
+            </form>
+            
+            <!-- Register Form -->
+            <form id="register-form" class="space-y-4 hidden">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                    <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                    <input type="email" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                    <input type="password" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Confirm Password</label>
+                    <input type="password" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                </div>
+                <button type="submit" class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition-colors">
+                    Create Account
+                </button>
+            </form>
+            
+            <div class="text-center mt-4">
+                <button id="toggle-auth" class="text-indigo-600 hover:text-indigo-700">
+                    Don't have an account? Sign up
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-store text-xl"></i>
+                        <h3 class="text-lg font-semibold">ModernStore</h3>
+                    </div>
+                    <p class="text-gray-400 mb-4">Your trusted partner for premium quality products at competitive prices.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">About Us</a></li>
+                        <li><a href="#" class="hover:text-white">Contact</a></li>
+                        <li><a href="#" class="hover:text-white">FAQ</a></li>
+                        <li><a href="#" class="hover:text-white">Shipping Info</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Categories</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Electronics</a></li>
+                        <li><a href="#" class="hover:text-white">Clothing</a></li>
+                        <li><a href="#" class="hover:text-white">Home & Garden</a></li>
+                        <li><a href="#" class="hover:text-white">Sports</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe for updates and special offers</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="flex-1 px-3 py-2 bg-gray-700 border border-gray-600 rounded-l-lg focus:outline-none">
+                        <button class="bg-indigo-600 px-4 py-2 rounded-r-lg hover:bg-indigo-700">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 ModernStore. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/products.js"></script>
+</body>
+</html>
