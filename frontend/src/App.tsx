@@ -12,6 +12,7 @@ import NotesPage from './pages/services/NotesPage'
 import TranslationPage from './pages/services/TranslationPage'
 import LogoDesignPage from './pages/services/LogoDesignPage'
 import CounsellingPage from './pages/services/CounsellingPage'
+import ModernStorePage from './pages/ModernStorePage'
 import NotFoundPage from './pages/NotFoundPage'
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
                 <Route path="/services/translation" element={<TranslationPage />} />
                 <Route path="/services/logo-design" element={<LogoDesignPage />} />
                 <Route path="/services/counselling" element={<CounsellingPage />} />
+                <Route path="/modernstore-demo" element={<ModernStorePage />} />
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="*" element={<NotFoundPage />} />
