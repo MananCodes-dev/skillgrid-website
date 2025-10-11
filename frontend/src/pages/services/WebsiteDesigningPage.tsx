@@ -29,7 +29,7 @@ const WebsiteDesigningPage: React.FC = () => {
       description: 'Modern online store with payment integration and inventory management',
       technologies: 'React, Node.js, Stripe',
       isLiveDemo: true,
-      demoUrl: '/modernstore/index.html'
+      demoUrl: '/modernstore-demo'
     },
     {
       title: 'Corporate Website',
@@ -69,7 +69,7 @@ const WebsiteDesigningPage: React.FC = () => {
         type="service"
         structuredData={structuredData}
       />
-      <SEO 
+      <SEO
         title="Professional Website Design Services - SkillGrid"
         description="Transform your digital presence with SkillGrid's professional website design services. We create responsive, SEO-optimized websites that captivate audiences and drive business growth."
         keywords="website design, web development, responsive design, SEO optimization, professional websites, custom websites, e-commerce websites, business websites"
@@ -83,8 +83,8 @@ const WebsiteDesigningPage: React.FC = () => {
           <p className="text-xl mb-8 max-w-3xl mx-auto">
             Transform your digital presence with stunning, responsive websites that captivate your audience and drive business growth
           </p>
-          <Link 
-            to="/contact" 
+          <Link
+            to="/contact"
             className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block"
           >
             Get Your Website Quote
@@ -188,14 +188,12 @@ const WebsiteDesigningPage: React.FC = () => {
                   <h4 className="text-xl font-semibold mb-2">Interactive Demo</h4>
                   <p className="opacity-90">Fully functional e-commerce platform</p>
                 </div>
-                <a
-                  href="/modernstore/index.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to="/modernstore-demo"
                   className="inline-block bg-white text-indigo-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-lg shadow-lg"
                 >
                   🚀 Launch Demo Store
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -222,14 +220,12 @@ const WebsiteDesigningPage: React.FC = () => {
                   <p className="text-gray-600 mb-3">{project.description}</p>
                   <div className="text-sm text-blue-600 font-medium mb-4">{project.technologies}</div>
                   {project.isLiveDemo && (
-                    <a
-                      href={project.demoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <Link
+                      to={project.demoUrl}
                       className="inline-block bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-4 py-2 rounded-lg hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 font-medium text-sm"
                     >
                       View Live Demo →
-                    </a>
+                    </Link>
                   )}
                 </div>
               </div>
@@ -262,18 +258,18 @@ const WebsiteDesigningPage: React.FC = () => {
         <section className="bg-blue-600 text-white rounded-lg p-12 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Online Presence?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Let's create a website that not only looks amazing but also drives real results for your business. 
+            Let's create a website that not only looks amazing but also drives real results for your business.
             Contact us today for a free consultation and quote.
           </p>
           <div className="space-x-4">
-            <Link 
-              to="/contact" 
+            <Link
+              to="/contact"
               className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block"
             >
               Start Your Project
             </Link>
-            <Link 
-              to="/services" 
+            <Link
+              to="/services"
               className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors inline-block"
             >
               View All Services
