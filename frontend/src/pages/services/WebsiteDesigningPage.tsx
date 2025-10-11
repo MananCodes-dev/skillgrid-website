@@ -25,9 +25,11 @@ const WebsiteDesigningPage: React.FC = () => {
 
   const portfolioExamples = [
     {
-      title: 'E-commerce Platform',
+      title: 'ModernStore - E-commerce Platform',
       description: 'Modern online store with payment integration and inventory management',
-      technologies: 'React, Node.js, Stripe'
+      technologies: 'React, Node.js, Stripe',
+      isLiveDemo: true,
+      demoUrl: '/modernstore/index.html'
     },
     {
       title: 'Corporate Website',
@@ -141,17 +143,94 @@ const WebsiteDesigningPage: React.FC = () => {
           </div>
         </section>
 
+        {/* Featured Demo Section */}
+        <section className="mb-16">
+          <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl p-8 text-white">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold mb-4">🛒 Featured Demo: ModernStore</h2>
+              <p className="text-xl opacity-90 max-w-3xl mx-auto">
+                Experience our e-commerce expertise with this fully functional online store demo featuring payment integration, inventory management, and modern design.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h3 className="text-2xl font-semibold mb-4">Key Features:</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-center">
+                    <svg className="w-5 h-5 mr-3 text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    React & Node.js Architecture
+                  </li>
+                  <li className="flex items-center">
+                    <svg className="w-5 h-5 mr-3 text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    Stripe Payment Integration
+                  </li>
+                  <li className="flex items-center">
+                    <svg className="w-5 h-5 mr-3 text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    Responsive Mobile Design
+                  </li>
+                  <li className="flex items-center">
+                    <svg className="w-5 h-5 mr-3 text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    Inventory Management System
+                  </li>
+                </ul>
+              </div>
+              <div className="text-center">
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 mb-6">
+                  <div className="text-6xl mb-4">🛒</div>
+                  <h4 className="text-xl font-semibold mb-2">Interactive Demo</h4>
+                  <p className="opacity-90">Fully functional e-commerce platform</p>
+                </div>
+                <a
+                  href="/modernstore/index.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-white text-indigo-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-lg shadow-lg"
+                >
+                  🚀 Launch Demo Store
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Portfolio Examples */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Work</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">More Examples</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {portfolioExamples.map((project, index) => (
               <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                <div className="h-48 bg-gradient-to-br from-blue-400 to-purple-500"></div>
+                <div className={`h-48 ${project.isLiveDemo ? 'bg-gradient-to-br from-indigo-500 to-purple-600' : 'bg-gradient-to-br from-blue-400 to-purple-500'}`}>
+                  {project.isLiveDemo && (
+                    <div className="h-full flex items-center justify-center">
+                      <div className="text-white text-center">
+                        <div className="text-4xl mb-2">🛒</div>
+                        <div className="text-sm font-medium">Live Demo Available</div>
+                      </div>
+                    </div>
+                  )}
+                </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
                   <p className="text-gray-600 mb-3">{project.description}</p>
-                  <div className="text-sm text-blue-600 font-medium">{project.technologies}</div>
+                  <div className="text-sm text-blue-600 font-medium mb-4">{project.technologies}</div>
+                  {project.isLiveDemo && (
+                    <a
+                      href={project.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-4 py-2 rounded-lg hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 font-medium text-sm"
+                    >
+                      View Live Demo →
+                    </a>
+                  )}
                 </div>
               </div>
             ))}
