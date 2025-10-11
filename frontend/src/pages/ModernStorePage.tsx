@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { SEO } from '../components'
 
 const ModernStorePage: React.FC = () => {
@@ -11,7 +12,7 @@ const ModernStorePage: React.FC = () => {
         url="/modernstore-demo"
         type="website"
       />
-      
+
       {/* Header */}
       <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-12">
         <div className="container mx-auto px-4 text-center">
@@ -20,18 +21,18 @@ const ModernStorePage: React.FC = () => {
             Experience our e-commerce development expertise with this fully functional online store
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="bg-white text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
             >
               🚀 Get Your Store Built
-            </a>
-            <a
-              href="/services/website-designing"
+            </Link>
+            <Link
+              to="/services/website-designing"
               className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-indigo-600 transition-colors"
             >
               📋 View All Services
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -50,13 +51,13 @@ const ModernStorePage: React.FC = () => {
                 </div>
               </div>
             </div>
-            
+
             {/* Demo Preview */}
             <div className="relative bg-gray-100 rounded-lg p-8 text-center">
               <div className="text-6xl mb-4">🛒</div>
               <h3 className="text-2xl font-bold text-gray-800 mb-4">ModernStore E-commerce Platform</h3>
               <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-                A fully functional e-commerce platform built with React, Node.js, and Stripe integration. 
+                A fully functional e-commerce platform built with React, Node.js, and Stripe integration.
                 Features include product catalog, shopping cart, user authentication, and secure payment processing.
               </p>
               <div className="grid md:grid-cols-2 gap-4 max-w-lg mx-auto mb-6">
@@ -79,7 +80,7 @@ const ModernStorePage: React.FC = () => {
               </div>
               <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">
                 <p className="text-yellow-800 text-sm">
-                  <strong>Note:</strong> This is a demonstration of our e-commerce development capabilities. 
+                  <strong>Note:</strong> This is a demonstration of our e-commerce development capabilities.
                   The actual demo is currently being optimized for better performance.
                 </p>
               </div>
@@ -91,15 +92,15 @@ const ModernStorePage: React.FC = () => {
               >
                 📂 View Source Code
               </a>
-              <a
-                href="/contact"
+              <Link
+                to="/contact"
                 className="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition-colors"
               >
                 💬 Discuss Your Project
-              </a>
+              </Link>
             </div>
           </div>
-          
+
           {/* Technical Stack */}
           <div className="mt-12">
             <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">Technical Implementation</h2>
@@ -164,12 +165,12 @@ const ModernStorePage: React.FC = () => {
             <p className="text-xl mb-6 opacity-90">
               Let us create a custom e-commerce solution for your business
             </p>
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="bg-white text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block"
             >
               Start Your Project
-            </a>
+            </Link>
           </div>
         </div>
       </div>
